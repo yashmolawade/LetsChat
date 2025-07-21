@@ -12,6 +12,20 @@ import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 import { app, server } from "./lib/socket.js";
 
+app.use(helmet()); // adds default security headers
+
+// Optional: add custom CSP
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    styleSrc: ["'self'", 'https://fonts.googleapis.com'],
+    fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+    scriptSrc: ["'self'"],
+    connectSrc: ["'self'"],
+    imgSrc: ["'self'"]
+  }
+}));
+
 const __dirname = path.resolve();
 dotenv.config({ path: path.join(__dirname, ".env") });
 
