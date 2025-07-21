@@ -1,0 +1,15 @@
+{
+  "name": "newdeplyoment",
+  "version": "1.0.0",
+  "description": "LetsChat is a modern real-time chat application built with the MERN stack (MongoDB, Express.js, React, Node.js) and Socket.IO for real-time communication. It features a beautiful UI built with Tailwind CSS and DaisyUI.",
+  "main": "index.js",
+  "scripts": {
+    "build":"npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start" : "npm run start --prefix backend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
